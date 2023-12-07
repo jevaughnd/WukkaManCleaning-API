@@ -1,0 +1,79 @@
+﻿@model WukkaMan_Interface.Models.User
+
+@{
+    ViewData["Title"] = "Login";
+}
+
+@*
+<center>
+    <h2>Login</h2>
+
+    <h5>User</h5>
+</center>
+<hr />*@
+
+<div class="container row-cols-md-3  d-flex justify-content-center align-items-center "> 
+    
+
+    <form asp-action="Login" class="LoginForm">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+        <center><h4>Login</h4></center>
+
+        <div class="form-group">
+            <label asp-for="Username" class="control-label"></label>
+            <input asp-for="Username" class="form-control" />
+            <span asp-validation-for="Username" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="Password" class="control-label"></label>
+            <input asp-for="Password" class="form-control" />
+            <span asp-validation-for="Password" class="text-danger"></span>
+        </div>
+
+        <div class="form-group row-cols-md-1">
+            <input type="submit" value="Login" class="btn btn-primary loginBtn" />
+        </div>
+    </form>
+
+</div> <!------------>
+
+
+<div class="AllButtons">
+
+    
+
+    <div class="">
+        <a class="btn btn-success" href="/EmployeeScreen/EmployeeLogin" role="button"> Employee Screen</a>
+    </div>
+ 
+
+  
+
+
+    
+
+    @*<div class="">
+        <a class="btn btn-success" href="/Task/Create" role="button">Task Completed</a>
+    </div>
+
+    <div class="">
+        <a class="btn btn-success" href="/ClockShift/Create" role="button">Clock Your Shift</a>
+    </div>*@
+
+
+</div>
+
+
+
+<div class="BigHomeImg">
+    <img src="~/WebImage/vacuum-cleaner-near-team-of-colleagues cropped.jpg" height="715" />
+</div>
+
+
+
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

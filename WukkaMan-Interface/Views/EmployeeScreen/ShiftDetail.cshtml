@@ -1,0 +1,62 @@
+﻿@model WukkaMan_Interface.Models.EmplyeeClockShift
+
+@{
+    ViewData["Title"] = "ShiftDetail";
+}
+
+
+<partial name="_EmployeeNavBar" />
+
+
+<h3>Your Last Shift Details</h3>
+
+<div>
+    
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Id)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Id)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.EmployeeId)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Employee.FullName)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.WorkId)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.WorkId)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.ClockIn)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.ClockIn)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.ClockOut)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.ClockOut)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.ShiftDate)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.ShiftDate)
+        </dd>
+    </dl>
+</div>
+
+
+<div class="">
+    <a class="btn btn-success" asp-controller="EmployeeScreen" asp-action="Update_YourShift" asp-route-id="@Model.Id" role="button">Update Your Shift</a>
+</div>
+
+
+

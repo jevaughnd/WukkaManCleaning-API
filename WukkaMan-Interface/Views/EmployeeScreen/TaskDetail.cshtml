@@ -1,0 +1,57 @@
+﻿@model WukkaMan_Interface.Models.EmployeeTask
+
+@{
+    ViewData["Title"] = "TaskDetail";
+}
+
+
+<partial name="_EmployeeNavBar" />
+
+
+<h3>Your Task Details</h3>
+
+<div>
+   
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Id)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Id)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Employee)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Employee.FullName)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.TaskId)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Task.TaskName)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.isCompleted)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.isCompleted)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.AssigmentDate)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.AssigmentDate)
+        </dd>
+    </dl>
+</div>
+
+
+
+
+<div class="">
+    <a class="btn btn-success" asp-controller="EmployeeScreen" asp-action="Emp_EditTask" asp-route-id="@Model.Id"  role="button">Edit Task</a>
+</div>
+
+

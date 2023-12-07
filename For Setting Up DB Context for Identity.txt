@@ -1,0 +1,45 @@
+//For Setting Up DB Context for Identity
+
+namespace WukkaManCleaning_API.Data
+{
+    public class IdentityApplicationDbContext: IdentityDbContext
+    {
+        public IdentityApplicationDbContext(DbContextOptions<IdentityApplicationDbContext> options) : base(options) { }
+
+        public DbSet<Employee> Employees { get; set; }
+        public DbSet<EmployeeTask> EmployeesTasks { get; set; }
+        public DbSet<EmplyeeClockShift> EmplyeeClockShifts { get;set; }
+        public DbSet<EmpTask> EmpTasks { get; set; }
+      
+     
+    }
+
+
+
+}
+--------------------------------------------------------
+First User;
+
+j.dyer@mail.com
+$Tring123
+
+---------------------------------------------
+Second User;
+
+{
+  "username": "j.wilson@mail.com",
+  "password": "Password123$"
+}
+
+eyJhbGciOiJodHRwOi8vd3d3LnczLm9yZy8yMDAxLzA0L3htbGRzaWctbW9yZSNobWFjLXNoYTUxMiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9lbWFpbGFkZHJlc3MiOiJqLndpbHNvbkBtYWlsLmNvbSIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6IkFkbWluIiwiZXhwIjoxNjk4NTIwMzE4fQ.38i_b8B3006Mnv43hIuXHqHayJCkVBDUrsuii_H0HmCVvKd2gIgcxtqCAxGD8g5IhkGDRYzhAesfmbgixI7ieg
+-------------------------------------------------------------
+Third User
+
+{
+  "username": "jevaughn@mail.com",
+  "password": "Pa$$word123"
+}
+
+
+
+

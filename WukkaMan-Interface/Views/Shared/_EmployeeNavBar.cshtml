@@ -1,0 +1,147 @@
+﻿@{
+	ViewData["Title"] = "_EmployeeNavBar";
+}
+
+
+
+
+
+
+
+<div>
+    <center>
+        <h6>The Time Is Now</h6>
+        <div class="Timer">
+            <h4 id="timer"></h4>
+        </div>
+    </center>
+    
+
+
+    <div class="Clock-Shift-Contianer">
+        <h6>Start Your Shift</h6>
+
+        <div id="loginTime"></div>
+        <button onclick="logLoginTime()" class="btn btn-outline-success">Clock In</button>
+       @* <button onclick="logLogoutTime()">Clock Out</button>*@
+
+    </div>
+    
+
+
+    
+    <div class="EmpNavButtons">
+
+        <div class="">
+            <a class="btn btn-outline-success" asp-action="EmployeeDetail" asp-route-id="@Model.Id" role="button">Your Details</a>
+        </div>
+
+
+        <div class="">
+            <a class="btn btn-outline-success" asp-action="TaskDetail" asp-route-id="@Model.Id" role="button"> Task Detail</a>
+        </div>
+
+
+        <div class="">
+            <a class="btn btn-outline-success" asp-action="ShiftDetail" asp-route-id="@Model.Id" role="button"> Shift Detail</a>
+        </div>
+
+        <div class="">
+            <a class="btn btn-outline-success" href="/Login/Login" role="button"> Logout</a>
+        </div>
+
+
+    </div>
+
+
+    <!----- Curent timer / Displays Current Time To the Employee at all times  ------------->
+
+    <div id="timer"></div>
+
+    <script>
+        // To update the timer
+        function updateTimer() {
+            var currentTime = new Date();
+            var hours = currentTime.getHours();
+            var minutes = currentTime.getMinutes();
+            var seconds = currentTime.getSeconds();
+            var meridiem = hours >= 12 ? "PM" : "AM";
+
+            // Convert hours to 12-hour format without leading zero
+            hours = (hours % 12) || 12;
+
+            // Add leading zero if the value is less than 10
+            minutes = (minutes < 10 ? "0" : "") + minutes;
+            seconds = (seconds < 10 ? "0" : "") + seconds;
+
+            // Displays the timer in the format
+            var timerText = hours + ":" + minutes + ":" + seconds + " " + meridiem;
+
+            //"timer" div box shown to employee
+            document.getElementById("timer").innerText = timerText;
+        }
+
+        // Update the timer every second to show real time
+        setInterval(updateTimer, 1000);
+
+        // Call the function now, to Show the initial time
+        updateTimer();
+    </script>
+
+</div>
+
+
+
+
+<!-------------------------------------------------->
+
+
+
+<!---------- Start Shift Clock   ----------->
+
+<body>
+
+   
+
+    <script>
+        function getFormattedTime() {
+            const now = new Date();
+            const hours = String(now.getHours() % 12 || 12).padStart(2, '0'); // Convert 0 to 12 //
+            const minutes = String(now.getMinutes()).padStart(2, '0');
+            const seconds = String(now.getSeconds()).padStart(2, '0');
+            const ampm = now.getHours() < 12 ? 'AM' : 'PM';
+
+            return `${hours}:${minutes}:${seconds} ${ampm}`;
+        }
+
+        function logLoginTime() {
+            const loginTime = getFormattedTime();
+            localStorage.setItem('loginTime', loginTime);
+            document.getElementById('loginTime').innerText = `Clocked In At: ${loginTime}`;
+        }
+
+        function logLogoutTime() {
+            const logoutTime = getFormattedTime();
+            localStorage.setItem('logoutTime', logoutTime);
+            document.getElementById('loginTime').innerText = `Clocked out at: ${logoutTime}`;
+        }
+
+        // Now Set the initial login time 
+        const initialLoginTime = localStorage.getItem('loginTime');
+        if (initialLoginTime) {
+            document.getElementById('loginTime').innerText = `Clocked In At: ${initialLoginTime}`;
+        }
+    </script>
+
+</body>
+
+
+
+
+
+
+
+
+
+
+

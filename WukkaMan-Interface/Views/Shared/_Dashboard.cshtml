@@ -1,0 +1,48 @@
+﻿@{
+	ViewData["Title"] = "_Dashboard";
+}
+
+<div class="dashboard close"> <!--------------->
+
+    
+	
+	<header>
+		<center>
+			<h4>Wukka Man</h4>
+		</center>
+		<i class=' bx bx-chevron-left toggle'></i>
+	</header>
+	
+	
+		<div class="">
+				<a class=" btn btn-outline-primary link-butten " asp-area="" asp-controller="Employee" asp-action="Index">
+					<span class="text nav-text">Employees</span>
+				</a>
+
+				<a class=" btn btn-outline-primary link-butten " asp-area="" asp-controller="Task" asp-action="Index">
+					<span class="text nav-text">Tasks</span>
+				</a>
+
+				<a class=" btn btn-outline-primary link-butten " asp-area="" asp-controller="ClockShift" asp-action="Index">
+					<span class="text nav-text">Shifts</span>
+				</a>
+
+				
+		</div>
+
+		<a class="btn btn-outline-primary link-butten dash-logout " asp-area="" asp-controller="Home" asp-action="Index">Log Out</a>
+		
+
+		
+		<script src="~/js/site.js"></script> <!--toggle function-->
+
+		<center><h6>Dashboard</h6></center>
+		<hr />
+		<hr />
+		<hr />
+
+
+</div> <!----------------------------->
+
+
+

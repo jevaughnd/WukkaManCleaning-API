@@ -1,0 +1,84 @@
+﻿@model WukkaMan_Interface.Models.Employee
+
+
+
+
+@{
+    ViewData["Title"] = "EmployeeDetail";
+    var serverTime = ViewData["ServerTime"] as DateTime? ?? DateTime.Now;
+}
+
+
+<partial name="_EmployeeNavBar" />
+
+
+
+
+                             
+<h3>Your Work Details</h3>
+
+<div>
+ 
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Id)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Id)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.FullName)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.FullName)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.EmailAddress)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.EmailAddress)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.PhoneNumber)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.PhoneNumber)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.WorkId)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.WorkId)
+        </dd>
+    </dl>
+</div>
+
+
+
+<div>
+    <h7> Date:  @serverTime.ToString("dddd, MMMM d, yyyy") </h7>
+</div>
+
+<div>
+    <h7>The Time Is Now: @serverTime.ToString("h:mm tt") </h7>
+</div>
+
+@*<div>
+    <p>The Time Is Now: @serverTime.ToString("HH:mm:ss")</p>
+</div>*@
+
+<div style="color: green;"> <h6>@ViewData["ClockInTime"] </h6> </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
